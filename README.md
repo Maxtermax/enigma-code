@@ -7,8 +7,6 @@ Simple script para encriptar contraseñas con varias funciones para comparar, de
 =======
 Como usar ?
 ==============
-
-
 Es bastante facil ya que no son muchas las funciones que tiene encript puntualmente funciona de la siguiente forma:
 
 ## Primera funcion Generar hash:
@@ -25,7 +23,7 @@ encrypt.genHash(valorEncriptacion,'contraseña123')//el segundo
 //parametro es la contraseña en texto plano que te interesa encriptar
 
 encrypt.genHash(valorEncriptacion,'contraseña123',function(hash){
-console.log(hash)
+	console.log(hash)//2dl3lkwkj13kj12k12kj321kj
 //esa funcion retorna por defecto en hash la contraseña encriptada
 
 });//el tercer paramtro es una funcion la cual devuelve el 'hash' 
@@ -36,7 +34,7 @@ console.log(hash)
 
 
 ## Segunda funcion Desencriptar hash:
-```
+```javascript
 
 Esta funcion es muy sencilla de usar es importante dejar claro que primero se debe establecer.
 
@@ -59,7 +57,7 @@ encrypt.Desencriptar(hash,function(des){
 
 
 ## Tercera funcion Comparar:
-```
+```javascript
 Esta funcion retorna un valor boolean si la contraseña candidata 
 es la misma del hash entonces retornara true de lo contrario false.
 
