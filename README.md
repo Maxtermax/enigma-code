@@ -5,6 +5,18 @@ Que es encrypt ?
 Simple script para encriptar contraseñas con varias funciones para comparar, des encriptar 
 
 =======
+Ejemplo ?
+==============
+Puedes correr un pequeño ejemplo y ver la magia assci si te clonas el repositorio 
+y instala las dependencias con:
+## npm install 
+despues de que esto puedes correr el ejemplo con:
+## nodemon example 
+o 
+## node examples 
+
+
+=======
 Como usar ?
 ==============
 Es bastante facil ya que no son muchas las funciones que tiene encript puntualmente funciona de la siguiente forma:
