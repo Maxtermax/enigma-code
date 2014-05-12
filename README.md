@@ -18,15 +18,18 @@ Es bastante facil ya que no son muchas las funciones que tiene encript puntualme
 
 var valorEncriptacion=10//puede ser cualquier numero
 encrypt.genHash(valorEncriptacion)//genera el hash de tu contraseña
-//teniendo como base el valor de encriptacion que le pases como parametro es de tu eleccion en valor que le pases
+//teniendo como base el valor de encriptacion 
+//que le pases como parametro es de tu eleccion en valor que le pases
 
-encrypt.genHash(valorEncriptacion,'contraseña123')//el segundo parametro es la contraseña en texto plano que te interesa encriptar
+encrypt.genHash(valorEncriptacion,'contraseña123')//el segundo
+//parametro es la contraseña en texto plano que te interesa encriptar
 
 encrypt.genHash(valorEncriptacion,'contraseña123',function(hash){
 console.log(hash)
 //esa funcion retorna por defecto en hash la contraseña encriptada
 
-});//el tercer paramtro es una funcion la cual devuelve el 'hash' es decir la contraseña encriptada es importante pedirlo en el callback de la funcion
+});//el tercer paramtro es una funcion la cual devuelve el 'hash' 
+//es decir la contraseña encriptada es importante pedirlo en el callback de la funcion
 
 //eso es todo con la funcion de encriptar conseña o genHash() :)
 ```
@@ -37,25 +40,33 @@ console.log(hash)
 
 Esta funcion es muy sencilla de usar es importante dejar claro que primero se debe establecer.
 
-El valor de encriptacion con la funcion genHash() es decir la funcion genHash() siempre debe ir declarada primero
+El valor de encriptacion con la funcion genHash() 
+//es decir la funcion genHash() siempre debe ir declarada primero
 
 var hash='ē285ĺ324ķ321Ĭ310ķ321ĺ324ĳ317Ĵ318Į312Ĵ318ľ328Ŀ329İ314';
-encript.Desencriptar(hash)//el primer parametro que se necesita en esta funcion es obviamente la hash a desencriptar
 
-//si el valor de encriptacion es distinto al el valor con el que esta encriptado el hash entonces des encriptara mal.
+encript.Desencriptar(hash)//el primer parametro que se necesita
+//en esta funcion es obviamente la hash a desencriptar
+
+//si el valor de encriptacion es distinto al el valor con el que esta encriptado 
+//el hash entonces des encriptara mal.
 
 encrypt.Desencriptar(hash,function(des){
 	console.log(des);//return des encriptacion
-});//el segundo parametro es una funcion que retorna el hash desencriptado muy similar a la funcion anterior.
+});//el segundo parametro es una funcion que retorna el hash desencriptado
+// muy similar a la funcion anterior.
 ```
 
 
 ## Tercera funcion Comparar:
 ```
-Esta funcion retorna un valor boolean si la contraseña candidata es la misma del hash entonces retornara true de lo contrario false.
+Esta funcion retorna un valor boolean si la contraseña candidata 
+es la misma del hash entonces retornara true de lo contrario false.
 
 var hash='ē285ĺ324ķ321Ĭ310ķ321ĺ324ĳ317Ĵ318Į312Ĵ318ľ328Ŀ329İ314';
-encrypt.comparar(hash)//el primer parametro es el hash que deberia estar en tu DB store encriptado con la funcion genHash()
+
+encrypt.comparar(hash)//el primer parametro es el hash que deberia estar en tu
+DB store encriptado con la funcion genHash()
 
 encrypt.comparar(hash,'ContraseñaCandidata')//el segundo parametro es la contraseña candidata con la que se intenta validar
 
@@ -82,8 +93,11 @@ la primera funcion de todas llamada "funcion Generar hash"
 ==============
 ```
 
-Es por que no haz definido el valor de encriptacion con la funcion genHash() si no sabes cual esta funcion
-ve hacia la seccion como usar encrypt y busca la primera funcion de todas llamada "funcion Generar hash"
+Es por que no haz definido el valor de encriptacion con la funcion genHash() 
+si no sabes cual esta funcion
+
+ve hacia la seccion como usar encrypt y busca la funcion principal
+llamada "funcion Generar hash".
 ```
 
 =======
