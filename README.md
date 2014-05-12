@@ -76,7 +76,7 @@ es la misma del hash entonces retornara true de lo contrario false.
 var hash='ē285ĺ324ķ321Ĭ310ķ321ĺ324ĳ317Ĵ318Į312Ĵ318ľ328Ŀ329İ314';
 
 encrypt.comparar(hash)//el primer parametro es el hash que deberia estar en tu
-DB store encriptado con la funcion genHash()
+//DB store encriptado con la funcion genHash()
 
 encrypt.comparar(hash,'ContraseñaCandidata')//el segundo parametro es la contraseña candidata con la que se intenta validar
 
