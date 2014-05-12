@@ -67,9 +67,13 @@ ser igual al que se definio en la funcion genHash()
 =======
 "Antes de comparar necesita un valor de encriptacion":
 ==============
+```
 Es por que no haz definido el valor de encriptacion con la funcion genHash() si no sabes cual esta funcion
 ve hacia la seccion como usar encrypt y busca la primera funcion de todas llamada "funcion Generar hash"
-
+function(){
+	
+}
+```
 =======
 "Antes de Desenciptar necesita un valor de encriptacion":
 ==============
