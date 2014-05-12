@@ -11,14 +11,16 @@ Que es encrypt ?
 ==============
 
 Simple script para encriptar contraseñas con varias funciones para comparar, des encriptar 
+
 =======
 Como usar ?
 ==============
 
+
 Es bastante facil ya que no son muchas las funciones que tiene encript puntualmente funciona de la siguiente forma:
-=======
+
 Primera funcion Generar hash:
-==============
+
 
 var valorEncriptacion=10//puede ser cualquier numero
 encrypt.genHash(valorEncriptacion)//genera el hash de tu contraseña
@@ -33,9 +35,11 @@ console.log(hash)
 });//el tercer paramtro es una funcion la cual devuelve el 'hash' es decir la contraseña encriptada es importante pedirlo en el callback de la funcion
 
 //eso es todo con la funcion de encriptar conseña o genHash() :)
+
 =======
 Segunda funcion Desencriptar hash:
 ==============
+
 
 Esta funcion es muy sencilla de usar es importante dejar claro que primero se debe establecer.
 
@@ -48,7 +52,8 @@ encript.Desencriptar(hash)//el primer parametro que se necesita en esta funcion 
 
 encrypt.Desencriptar(hash,function(des){
 	console.log(des);//return des encriptacion
-});//el segundo parametro es una funcion que retorna el hash desencriptado muy similar a la funcion anterior
+});//el segundo parametro es una funcion que retorna el hash desencriptado muy similar a la funcion anterior.
+
 =======
 Tercera funcion Comparar:
 ==============
@@ -64,8 +69,9 @@ encrypt.comparar(hash,'ContraseñaCandidata',function(res){
 	console.log(res)
 });//el terce parametro es una funcion que retorna la respueta en un valor boolean es decir si la contraseña candita es igual al hash retorna true de lo contrario no
 //importante dejar claro que el valor de encriptacion de el hash que se quiere compara debe 
-
 ser igual al que se definio en la funcion genHash() 
+
+
 =======
 Errores:
 ==============
