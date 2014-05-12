@@ -74,20 +74,18 @@ encrypt.comparar(hash,'ContraseñaCandidata',function(res){
 //importante dejar claro que el valor de encriptacion de el hash que se quiere compara debe ser igual al que se definio en la funcion genHash() 
 ```
 
-
-## Errores:
-
 =======
-"Antes de comparar necesita un valor de encriptacion":
+Errores:
 ==============
+
+## "Antes de comparar necesita un valor de encriptacion":
+
 ```
 Es por que no haz definido el valor de encriptacion con la funcion 
 genHash() si no sabes cual esta funcion:ve hacia la seccion como usar encrypt y busca 
 la primera funcion de todas llamada "funcion Generar hash"
 ```
-=======
-"Antes de Desenciptar necesita un valor de encriptacion":
-==============
+## "Antes de Desenciptar necesita un valor de encriptacion":
 ```
 
 Es por que no haz definido el valor de encriptacion con la funcion genHash() 
@@ -97,9 +95,8 @@ ve hacia la seccion como usar encrypt y busca la funcion principal
 llamada "funcion Generar hash".
 ```
 
-=======
-"Error introduce un valor mayor a cero":
-==============
+## "Error introduce un valor mayor a cero":
+
 ```
 Este error se produce por que le pasaste como parametro a la funcion genHash()
 un valor no valido como lo es 0 o inferior es decir valores negativo
@@ -107,6 +104,6 @@ un valor no valido como lo es 0 o inferior es decir valores negativo
 
 Esta es la primero version de encript proximente estara en npm como modulo en produccion.
 
-Autor :Esneyder Amin Palacios Mena 
-Contacto:@sneyder_a 
-Github:https://github.com/Maxtermax
+##Autor :Esneyder Amin Palacios Mena 
+##Contacto:@sneyder_a 
+##Github:https://github.com/Maxtermax
