@@ -116,7 +116,7 @@ un valor no valido como lo es 0 o inferior es decir valores negativo
 
 Esta es la primero version de encript proximente estara en npm como modulo en produccion.
 
-##Autor :Esneyder Amin Palacios Mena 
-##Contacto:@sneyder_a 
-##From @Quibdojs
+##Autor :Esneyder Amin Palacios Mena   || https://www.facebook.com/esnene02
+##Contacto:@sneyder_a 								 || https://twitter.com/Sneyder_A 
+##From @Quibdojs  		 								 || https://twitter.com/QuibdoJs
 ##Github:https://github.com/Maxtermax
