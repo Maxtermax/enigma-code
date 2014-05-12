@@ -78,14 +78,14 @@ encrypt.comparar(hash,'ContraseñaCandidata',function(res){
 Errores:
 ==============
 
-## "Antes de comparar necesita un valor de encriptacion":
+## "Antes de comparar necesita un valor de encriptacion"
 
 ```
 Es por que no haz definido el valor de encriptacion con la funcion 
 genHash() si no sabes cual esta funcion:ve hacia la seccion como usar encrypt y busca 
 la primera funcion de todas llamada "funcion Generar hash"
 ```
-## "Antes de Desenciptar necesita un valor de encriptacion":
+## "Antes de Desenciptar necesita un valor de encriptacion"
 ```
 
 Es por que no haz definido el valor de encriptacion con la funcion genHash() 
@@ -95,7 +95,7 @@ ve hacia la seccion como usar encrypt y busca la funcion principal
 llamada "funcion Generar hash".
 ```
 
-## "Error introduce un valor mayor a cero":
+## "Error introduce un valor mayor a cero"
 
 ```
 Este error se produce por que le pasaste como parametro a la funcion genHash()
