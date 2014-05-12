@@ -1,11 +1,3 @@
-<<<<<<< HEAD
- 
-=======
-encrypt-scrypt
-==============
-
-GUIA AQUI : Simple script para encriptar contraseñas con varias funciones para comparar, des encriptar
-
 =======
 Que es encrypt ?
 ==============
