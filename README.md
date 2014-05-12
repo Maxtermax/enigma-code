@@ -10,7 +10,10 @@ GUIA AQUI : Simple script para encriptar contraseñas con varias funciones para 
 Que es encrypt ?
 ==============
 
-Simple script para encriptar contraseñas con varias funciones para comparar, des encriptar + +Como usar ?
+Simple script para encriptar contraseñas con varias funciones para comparar, des encriptar 
+=======
+Como usar ?
+
 Es bastante facil ya que no son muchas las funciones que tiene encript puntualmente funciona de la siguiente forma:
 Primera funcion Generar hash:
 
