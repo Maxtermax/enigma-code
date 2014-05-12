@@ -15,6 +15,9 @@ Es bastante facil ya que no son muchas las funciones que tiene encript puntualme
 Primera funcion Generar hash:
 ==============
 
+## Usage
+
+### async (recommended)
 
 var valorEncriptacion=10//puede ser cualquier numero
 encrypt.genHash(valorEncriptacion)//genera el hash de tu contraseña
@@ -29,6 +32,8 @@ console.log(hash)
 });//el tercer paramtro es una funcion la cual devuelve el 'hash' es decir la contraseña encriptada es importante pedirlo en el callback de la funcion
 
 //eso es todo con la funcion de encriptar conseña o genHash() :)
+
+### sync
 
 =======
 Segunda funcion Desencriptar hash:
