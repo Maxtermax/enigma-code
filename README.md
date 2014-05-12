@@ -50,7 +50,7 @@ encript.Desencriptar(hash)//el primer parametro que se necesita
 //el hash entonces des encriptara mal.
 
 encrypt.Desencriptar(hash,function(des){
-	console.log(des);//return des encriptacion
+	console.log(des);//return desencriptacion
 });//el segundo parametro es una funcion que retorna el hash desencriptado
 // muy similar a la funcion anterior.
 ```
@@ -100,9 +100,10 @@ llamada "funcion Generar hash".
 =======
 "Error introduce un valor mayor a cero":
 ==============
-
+```
 Este error se produce por que le pasaste como parametro a la funcion genHash()
 un valor no valido como lo es 0 o inferior es decir valores negativo
+```
 
 Esta es la primero version de encript proximente estara en npm como modulo en produccion.
 
