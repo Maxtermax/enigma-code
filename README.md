@@ -14,7 +14,7 @@ Es bastante facil ya que no son muchas las funciones que tiene encript puntualme
 ## Primera funcion Generar hash:
 
 
-```
+```javascript
 
 var valorEncriptacion=10//puede ser cualquier numero
 encrypt.genHash(valorEncriptacion)//genera el hash de tu contraseña
