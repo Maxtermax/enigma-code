@@ -69,10 +69,9 @@ DB store encriptado con la funcion genHash()
 encrypt.comparar(hash,'ContraseñaCandidata')//el segundo parametro es la contraseña candidata con la que se intenta validar
 
 encrypt.comparar(hash,'ContraseñaCandidata',function(res){
-	console.log(res)
+	console.log(res)//false
 });//el terce parametro es una funcion que retorna la respueta en un valor boolean es decir si la contraseña candita es igual al hash retorna true de lo contrario no
-//importante dejar claro que el valor de encriptacion de el hash que se quiere compara debe 
-ser igual al que se definio en la funcion genHash() 
+//importante dejar claro que el valor de encriptacion de el hash que se quiere compara debe ser igual al que se definio en la funcion genHash() 
 ```
 
 
