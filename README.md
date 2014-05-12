@@ -118,4 +118,5 @@ Esta es la primero version de encript proximente estara en npm como modulo en pr
 
 ##Autor :Esneyder Amin Palacios Mena 
 ##Contacto:@sneyder_a 
+##From @Quibdojs
 ##Github:https://github.com/Maxtermax
