@@ -19,7 +19,9 @@ Como usar ?
 
 Es bastante facil ya que no son muchas las funciones que tiene encript puntualmente funciona de la siguiente forma:
 
+=======
 Primera funcion Generar hash:
+==============
 
 
 var valorEncriptacion=10//puede ser cualquier numero
