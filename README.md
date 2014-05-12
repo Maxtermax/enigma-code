@@ -11,13 +11,10 @@ Como usar ?
 
 Es bastante facil ya que no son muchas las funciones que tiene encript puntualmente funciona de la siguiente forma:
 
-=======
-Primera funcion Generar hash:
-==============
+## Primera funcion Generar hash:
 
-## Usage
+ 
 
-### async (recommended)
 
 var valorEncriptacion=10//puede ser cualquier numero
 encrypt.genHash(valorEncriptacion)//genera el hash de tu contraseña
@@ -33,12 +30,8 @@ console.log(hash)
 
 //eso es todo con la funcion de encriptar conseña o genHash() :)
 
-### sync
 
-=======
-Segunda funcion Desencriptar hash:
-==============
-
+## Segunda funcion Desencriptar hash:
 
 Esta funcion es muy sencilla de usar es importante dejar claro que primero se debe establecer.
 
@@ -53,9 +46,7 @@ encrypt.Desencriptar(hash,function(des){
 	console.log(des);//return des encriptacion
 });//el segundo parametro es una funcion que retorna el hash desencriptado muy similar a la funcion anterior.
 
-=======
-Tercera funcion Comparar:
-==============
+## Tercera funcion Comparar:
 
 Esta funcion retorna un valor boolean si la contraseña candidata es la misma del hash entonces retornara true de lo contrario false.
 
@@ -71,9 +62,8 @@ encrypt.comparar(hash,'ContraseñaCandidata',function(res){
 ser igual al que se definio en la funcion genHash() 
 
 
-=======
-Errores:
-==============
+## Errores:
+
 =======
 "Antes de comparar necesita un valor de encriptacion":
 ==============
