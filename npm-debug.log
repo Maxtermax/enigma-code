@@ -1,0 +1,67 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'adduser' ]
+2 info using npm@1.3.21
+3 info using node@v0.10.24
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose adduser before first PUT { name: 'esneyder',
+5 verbose adduser   salt: 'XXXXX',
+5 verbose adduser   password_sha: 'XXXXX',
+5 verbose adduser   email: 'esneyder_a@hotmail.com',
+5 verbose adduser   _id: 'org.couchdb.user:esneyder',
+5 verbose adduser   type: 'user',
+5 verbose adduser   roles: [],
+5 verbose adduser   date: '2014-06-29T23:55:31.212Z' }
+6 verbose url raw /-/user/org.couchdb.user:esneyder
+7 verbose url resolving [ 'https://registry.npmjs.org/',
+7 verbose url resolving   './-/user/org.couchdb.user:esneyder' ]
+8 verbose url resolved https://registry.npmjs.org/-/user/org.couchdb.user:esneyder
+9 info trying registry request attempt 1 at 18:55:31
+10 http PUT https://registry.npmjs.org/-/user/org.couchdb.user:esneyder
+11 http 409 https://registry.npmjs.org/-/user/org.couchdb.user:esneyder
+12 verbose adduser update existing user
+13 verbose url raw /-/user/org.couchdb.user:esneyder
+14 verbose url resolving [ 'https://registry.npmjs.org/',
+14 verbose url resolving   './-/user/org.couchdb.user:esneyder' ]
+15 verbose url resolved https://registry.npmjs.org/-/user/org.couchdb.user:esneyder
+16 info trying registry request attempt 1 at 18:55:32
+17 http GET https://registry.npmjs.org/-/user/org.couchdb.user:esneyder
+18 http 200 https://registry.npmjs.org/-/user/org.couchdb.user:esneyder
+19 verbose adduser userobj { name: 'esneyder',
+19 verbose adduser   salt: 'XXXXX',
+19 verbose adduser   password_sha: 'XXXXX',
+19 verbose adduser   email: 'esneyder_a@hotmail.com',
+19 verbose adduser   _id: 'org.couchdb.user:esneyder',
+19 verbose adduser   type: 'user',
+19 verbose adduser   roles: [],
+19 verbose adduser   date: '2014-06-29T23:55:31.212Z' }
+20 verbose url raw /-/user/org.couchdb.user:esneyder/-rev/7-47aa63180cdaa89fa4a70d6c37696bd9
+21 verbose url resolving [ 'https://registry.npmjs.org/',
+21 verbose url resolving   './-/user/org.couchdb.user:esneyder/-rev/7-47aa63180cdaa89fa4a70d6c37696bd9' ]
+22 verbose url resolved https://registry.npmjs.org/-/user/org.couchdb.user:esneyder/-rev/7-47aa63180cdaa89fa4a70d6c37696bd9
+23 info trying registry request attempt 1 at 18:55:33
+24 http PUT https://registry.npmjs.org/-/user/org.couchdb.user:esneyder/-rev/7-47aa63180cdaa89fa4a70d6c37696bd9
+25 http 409 https://registry.npmjs.org/-/user/org.couchdb.user:esneyder/-rev/7-47aa63180cdaa89fa4a70d6c37696bd9
+26 verbose adduser back [ [Error: conflict Document update conflict.: -/user/org.couchdb.user:esneyder/-rev/7-47aa63180cdaa89fa4a70d6c37696bd9],
+26 verbose adduser   { error: 'conflict', reason: 'Document update conflict.' },
+26 verbose adduser   '{"error":"conflict","reason":"Document update conflict."}' ]
+27 error Error: conflict Document update conflict.: -/user/org.couchdb.user:esneyder/-rev/7-47aa63180cdaa89fa4a70d6c37696bd9
+27 error     at RegClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:275:14)
+27 error     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:123:22)
+27 error     at Request.EventEmitter.emit (events.js:98:17)
+27 error     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:893:14)
+27 error     at Request.EventEmitter.emit (events.js:117:20)
+27 error     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:844:12)
+27 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+27 error     at _stream_readable.js:920:16
+27 error     at process._tickCallback (node.js:415:13)
+28 error If you need help, you may report this *entire* log,
+28 error including the npm and node versions, at:
+28 error     <http://github.com/isaacs/npm/issues>
+29 error System Windows_NT 6.2.9200
+30 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "adduser"
+31 error cwd C:\Users\JANETH MENA\Documents\GitHub\ENCRYPT
+32 error node -v v0.10.24
+33 error npm -v 1.3.21
+34 verbose exit [ 1, true ]

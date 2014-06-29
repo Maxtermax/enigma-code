@@ -1,31 +1,19 @@
 {
-  "name": "encrypt",
-  "description": "Encrypt es un modulo del framework de javascript node.js para encriptar contraseñas antes de guardarla en tu base de datos este modulo tiene varias funciones para: comparar, desencriptar y encriptar contraseñas",
-  "author": {
-    "name": "Esneyder Amin",
-    "email": "esneyder_a@hotmail.com"
-  },
-  "main": "./index",
-  "lincense": "EAPM",
-  "version": "0.1.1",
-  "repository": {
+  "name":"encrypt",
+   "description":"encrypt es un modulo del framework de javascript node.js que sirve para encriptar contraseñas este modulo consta de varias funciones: encriptar,desencriptar y comparar contraseñas",
+   "author": "esneyder amin palacios mena <esneyder_a@hotmail.com>",
+    "main":"./index",
+    "lincense":"EAPM",
+  "version":"0.0.1",
+   "repository": {
     "type": "git",
     "url": "https://github.com/Maxtermax/encrypt-scrypt.git"
   },
   "keywords": [
     "encrypt",
-    "Descifrar",
-    "encode"
+    "hash"
   ],
-  "engines": {
-    "node": "*",
-    "npm": "*"
-  },
-  "bugs": {
-    "url": "https://github.com/Maxtermax/encrypt-scrypt/issues"
-  },
-  "readme": "README.md",
-  "homepage": "https://github.com/Maxtermax/encrypt-scrypt",
-  "_id": "encrypt@0.1.1",
-  "_from": "encrypt@"
-}
+  "engines":{
+    "node":"0.10.24",
+    "npm":"1.3.21"
+  }
