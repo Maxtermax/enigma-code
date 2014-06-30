@@ -5,7 +5,9 @@ var http=require('http')
 ,		server=http.createServer(app)
 ,		enigma=require('enigma-code')
 ,		art=require('ascii-art');
-
+/*
+go
+*/
 
 
 app.configure(function(){
