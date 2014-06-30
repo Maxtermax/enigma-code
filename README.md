@@ -2,7 +2,8 @@
 Que es enigma-code ?
 ==============
 
-Simple script para encriptar contraseñas con varias funciones para comparar, desencriptar .
+
+Es un sencillo modulo hecho en el framework de javascript node.js que sirve para encriptar contraseñas con varias funciones para comparar, desencriptar.
 
 =======
 Ejemplo ?
