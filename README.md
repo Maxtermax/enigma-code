@@ -1,3 +1,5 @@
+![alt tag](http://www.enigma-replica.com/LampPanel/NewLampFilmEnigma6Web.jpg)
+
 =======
 Que es enigma-code ?
 ==============
