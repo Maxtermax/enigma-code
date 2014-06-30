@@ -3,7 +3,7 @@ Que es enigma-code ?
 ==============
 
 
-Es un sencillo modulo hecho en el framework de javascript node.js que sirve para encriptar contraseñas con varias funciones para comparar, desencriptar.
+Es un sencillo modulo hecho en el framework de javascript node.js que sirve para encriptar contraseñas con varias funciones para comparar, desencriptar etc.
 
 =======
 Ejemplo ?
