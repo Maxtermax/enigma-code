@@ -16,7 +16,7 @@ Ubicate en el folder donde esta el ejemplo de enigma-code
 
 cd /node_modules/enigma-code/example
 
-## node examples 
+##3- node examples 
 Despues de que esto puedes correr el ejemplo  con:
 
 node example
