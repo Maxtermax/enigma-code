@@ -75,7 +75,7 @@ Puedes aprender mas sobre expreciones regulares aqui: http://webintenta.com/vali
 ```javascript
 
 
-enigma.genHash(valorEncriptacion,'contraseña123',function(hash){
+enigma.genHash(valorEncriptacion,key,'contraseña123',function(hash){
 	console.log(hash)//2dl3lkwkj13kj12k12kj321kj
 //esa funcion retorna por defecto en hash la contraseña encriptada
 
