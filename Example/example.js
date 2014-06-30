@@ -3,7 +3,9 @@ var http=require('http')
 ,		app=express()
 ,		fs=require('fs')
 ,		server=http.createServer(app)
-,		encrypt=require('encrypt');
+,		enigma=require('enigma-code')
+,		art=require('ascii-art');
+
 
 
 app.configure(function(){
@@ -23,7 +25,7 @@ app.get('/',function(req,res){
 });
 app.post('/',function(req,res){
 
-encrypt.genHash(10,'miLlave:p',req.body.pass,function(hash){
+enigma.genHash(10,'miLlave:p',req.body.pass,function(hash){
 			res.send(hash);
 });//genera hash con un numero de encriptacion cualquiera 
 	
@@ -31,7 +33,7 @@ encrypt.genHash(10,'miLlave:p',req.body.pass,function(hash){
 
 app.put('/',function(req,res){
 
-encrypt.Desencriptar(req.body.passU,function(des){
+enigma.Desencriptar(req.body.passU,function(des){
 			res.send(des);//return des encriptacion
 });//end desencriptar pass 
 	
@@ -40,6 +42,9 @@ encrypt.Desencriptar(req.body.passU,function(des){
 
 
 
-server.listen(1010,function(){
-		console.log("Listen on port "+server.address().port);
+server.listen(1234,function(){
+	art.font('Example \t \t \t \t\t \t\t \t :)','Doom','red',function(ren){
+		console.log(ren+" Listen on port "+server.address().port);
+	});
 });
+

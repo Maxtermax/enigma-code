@@ -1,47 +1,67 @@
 =======
-Que es encrypt ?
+Que es enigma-code ?
 ==============
 
-Simple script para encriptar contraseñas con varias funciones para comparar, des encriptar 
+Simple script para encriptar contraseñas con varias funciones para comparar, desencriptar .
 
 =======
 Ejemplo ?
 ==============
-Puedes correr un pequeño ejemplo y ver la magia assci si te clonas el repositorio 
-y instala las dependencias con:
-## npm install 
-despues de que esto puedes correr el ejemplo  con:
-## nodemon example 
-o 
-## node examples 
+ Claro puedes correr un pequeño ejemplo y ver la magia este modulo para hacer esto sigue los siguientes pasos:
 
+## 1- npm install enigma-code
+Este comando instala el modulo.
+## 2- Ubicar ejemplo
+Ubicate en el folder donde esta el ejemplo de enigma-code
+
+cd /node_modules/enigma-code/example
+
+## node examples 
+Despues de que esto puedes correr el ejemplo  con:
+
+node example
 
 =======
 Como usar ?
 ==============
-Es bastante facil ya que no son muchas las funciones que tiene encript puntualmente funciona de la siguiente forma:
+Es bastante facil ya que no son muchas las funciones que tiene enigma-code puntualmente funciona de la siguiente forma:
 
 ## Primera funcion Generar hash:
 
 
 ```javascript
+var enigma=require('enigma-code')
 
-var valorEncriptacion=10//puede ser cualquier numero
-encrypt.genHash(valorEncriptacion)//genera el hash de tu contraseña
+var valorEncriptacion=10;//puede ser cualquier numero
+enigma.genHash(valorEncriptacion)//genera el hash de tu contraseña
 //teniendo como base el valor de encriptacion 
 //que le pases como parametro es de tu eleccion en valor que le pases
 
-encrypt.genHash(valorEncriptacion,'contraseña123')//el segundo
+var key='millave';
+enigma.genHash(valorEncriptacion,key)//el segundo
+//parametro es una llave o key esto es una vale de seguridad 
+//con el cual todas tus contraseñas seran encriptadas
+//sin esto sera imposible desencriptar con exito 
+
+=======
+Es importante dejar en claro que cada contraseña que encriptes
+con el valor que tenga tu key solo podra se desencriptada con 
+exito si el key es el mismo con el que fue encriptada veremos con mas detalle
+adelante.
+
+
+
+enigma.genHash(valorEncriptacion,key,contraseña123')//el tercer
 //parametro es la contraseña en texto plano que te interesa encriptar
 
-encrypt.genHash(valorEncriptacion,'contraseña123',function(hash){
+enigma.genHash(valorEncriptacion,'contraseña123',function(hash){
 	console.log(hash)//2dl3lkwkj13kj12k12kj321kj
 //esa funcion retorna por defecto en hash la contraseña encriptada
 
-});//el tercer paramtro es una funcion la cual devuelve el 'hash' 
+});//el cuarto paramtro es una funcion la cual devuelve el 'hash' 
 //es decir la contraseña encriptada es importante pedirlo en el callback de la funcion
 
-//eso es todo con la funcion de encriptar conseña o genHash() :)
+//eso es todo con la funcion de encriptar contraseña o genHash() :)
 ```
 
 
@@ -49,19 +69,19 @@ encrypt.genHash(valorEncriptacion,'contraseña123',function(hash){
 ```javascript
 
 Esta funcion es muy sencilla de usar es importante dejar claro que primero se debe establecer.
-
 El valor de encriptacion con la funcion genHash() 
+
 //es decir la funcion genHash() siempre debe ir declarada primero
 
 var hash='ē285ĺ324ķ321Ĭ310ķ321ĺ324ĳ317Ĵ318Į312Ĵ318ľ328Ŀ329İ314';
 
-encript.Desencriptar(hash)//el primer parametro que se necesita
+enigma.Desencriptar(hash)//el primer parametro que se necesita
 //en esta funcion es obviamente la hash a desencriptar
 
 //si el valor de encriptacion es distinto al el valor con el que esta encriptado 
 //el hash entonces des encriptara mal.
 
-encrypt.Desencriptar(hash,function(des){
+enigma.Desencriptar(hash,function(des){
 	console.log(des);//return desencriptacion
 });//el segundo parametro es una funcion que retorna el hash desencriptado
 // muy similar a la funcion anterior.
@@ -75,12 +95,12 @@ es la misma del hash entonces retornara true de lo contrario false.
 
 var hash='ē285ĺ324ķ321Ĭ310ķ321ĺ324ĳ317Ĵ318Į312Ĵ318ľ328Ŀ329İ314';
 
-encrypt.comparar(hash)//el primer parametro es el hash que deberia estar en tu
+enigma.comparar(hash)//el primer parametro es el hash que deberia estar en tu
 //DB store encriptado con la funcion genHash()
 
-encrypt.comparar(hash,'ContraseñaCandidata')//el segundo parametro es la contraseña candidata con la que se intenta validar
+enigma.comparar(hash,'ContraseñaCandidata')//el segundo parametro es la contraseña candidata con la que se intenta validar
 
-encrypt.comparar(hash,'ContraseñaCandidata',function(res){
+enigma.comparar(hash,'ContraseñaCandidata',function(res){
 	console.log(res)//false
 });//el terce parametro es una funcion que retorna la respueta en un valor boolean es decir si la contraseña candita es igual al hash retorna true de lo contrario no
 //importante dejar claro que el valor de encriptacion de el hash que se quiere compara debe ser igual al que se definio en la funcion genHash() 
@@ -94,7 +114,7 @@ Errores:
 
 ```
 Es por que no haz definido el valor de encriptacion con la funcion 
-genHash() si no sabes cual esta funcion:ve hacia la seccion como usar encrypt y busca 
+genHash() si no sabes cual esta funcion:ve hacia la seccion como usar enigma y busca 
 la primera funcion de todas llamada "funcion Generar hash"
 ```
 ## "Antes de Desenciptar necesita un valor de encriptacion"
@@ -103,7 +123,7 @@ la primera funcion de todas llamada "funcion Generar hash"
 Es por que no haz definido el valor de encriptacion con la funcion genHash() 
 si no sabes cual esta funcion
 
-ve hacia la seccion como usar encrypt y busca la funcion principal
+ve hacia la seccion como usar enigma y busca la funcion principal
 llamada "funcion Generar hash".
 ```
 
