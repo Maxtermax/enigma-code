@@ -167,6 +167,9 @@ un valor no valido como lo es 0 o inferior es decir valores negativo
 
 
 ##Autor :Esneyder Amin Palacios Mena   || https://www.facebook.com/esnene02
-##Contacto:@sneyder_a 								 || https://twitter.com/Sneyder_A 
+##Contacto:
+##	1- esneyder_a@hotmail.com 
+##  2- esnene02@gmail.com 
+##|| https://twitter.com/Sneyder_A 
 ##From @Quibdojs  		 								 || https://twitter.com/QuibdoJs
 ##Github:https://github.com/Maxtermax
