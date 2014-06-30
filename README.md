@@ -166,7 +166,7 @@ un valor no valido como lo es 0 o inferior es decir valores negativo
 ```
 
 
-##Autor :Esneyder Amin Palacios Mena   || https://www.facebook.com/esnene02
+##Autor :Esneyder Amin Palacios Mena   https://www.facebook.com/esnene02
 ##Contacto:
 ##	1- esneyder_a@hotmail.com 
 ##  2- esnene02@gmail.com 
