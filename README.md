@@ -10,7 +10,7 @@ Ejemplo ?
 Puedes correr un pequeño ejemplo y ver la magia assci si te clonas el repositorio 
 y instala las dependencias con:
 ## npm install 
-despues de que esto puedes correr el ejemplo con:
+despues de que esto puedes correr el ejemplo  con:
 ## nodemon example 
 o 
 ## node examples 
