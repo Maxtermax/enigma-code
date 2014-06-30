@@ -57,7 +57,9 @@ exito si el key es el mismo con el que fue encriptada.
 enigma.genHash(valorEncriptacion,key,'contraseña123')
 /*
 parametro es la contraseña en texto plano que te interesa encriptar
-esta contraseña debe ser validada con una exprecion regular de contraseñas que acepte minimo 10 caracteres y maximo 15 o mas por el lado del fronted 
+esta contraseña debe ser validada con una exprecion regular
+ de contraseñas que acepte minimo 10 caracteres y maximo 15 o mas 
+ por el lado del frontend 
 frontend puedes usar esta por ejemplo:
 	var Reg=new RegExp(/^[a-zA-Z0-9ñ]{10,15}$/).test('min10caracteres');//true
 */el tercer
