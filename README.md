@@ -42,19 +42,31 @@ enigma.genHash(valorEncriptacion,key)el segundo
 /*
 parametro es una llave o key esto es una vale de seguridad 
 con el cual todas tus contraseñas seran encriptadas
-sin esto sera imposible desencriptar con exito 
+sin esto sera imposible desencriptar con exito la longitud de esta llave
+debe ser inferios a 10 caractes, pero si quieres tambien puedes encriptar
+esta llave.
 */
 ```
 
 Es importante dejar en claro que cada contraseña que encriptes
 con el valor que tenga tu key solo podra se desencriptada con 
-exito si el key es el mismo con el que fue encriptada veremos con mas detalle
-adelante.
+exito si el key es el mismo con el que fue encriptada.
 
 ```javascript
 
-enigma.genHash(valorEncriptacion,key,contraseña123')//el tercer
-//parametro es la contraseña en texto plano que te interesa encriptar
+enigma.genHash(valorEncriptacion,key,'contraseña123')
+/*
+parametro es la contraseña en texto plano que te interesa encriptar
+esta contraseña debe ser validada con una exprecion regular de contraseñas que acepte minimo 10 caracteres y maximo 15 o mas por el lado del fronted 
+frontend puedes usar esta por ejemplo:
+	var Reg=new RegExp(/^[a-zA-Z0-9ñ]{10,15}$/).test('min10caracteres');//true
+*/el tercer
+	
+```
+Puedes aprender mas sobre expreciones regulares aqui: http://webintenta.com/validacion-con-expresiones-regulares-y-javascript.html
+
+```javascript
+
 
 enigma.genHash(valorEncriptacion,'contraseña123',function(hash){
 	console.log(hash)//2dl3lkwkj13kj12k12kj321kj
@@ -87,6 +99,9 @@ enigma.Desencriptar(hash,function(des){
 	console.log(des);//return desencriptacion
 });//el segundo parametro es una funcion que retorna el hash desencriptado
 // muy similar a la funcion anterior.
+//importante dejar claro que el valor de encriptacion de el hash con el que se quiere  //debe ser igual al que se definio en la funcion genHash() y tambien el valor de el 
+//key  de lo contrario no podra desencriptar con exito
+
 ```
 
 
@@ -104,9 +119,18 @@ enigma.comparar(hash,'ContraseñaCandidata')//el segundo parametro es la contras
 
 enigma.comparar(hash,'ContraseñaCandidata',function(res){
 	console.log(res)//false
-});//el terce parametro es una funcion que retorna la respueta en un valor boolean es decir si la contraseña candita es igual al hash retorna true de lo contrario no
-//importante dejar claro que el valor de encriptacion de el hash que se quiere compara debe ser igual al que se definio en la funcion genHash() 
+});
+/*
+el terce parametro es una funcion que retorna la respueta en un valor boolean es 
+decir si la contraseña candita es igual al hash retorna true de lo contrario no
+
+importante dejar claro que el valor de encriptacion de el hash que se quiere compara 
+debe ser igual al que se definio en la funcion genHash() y tambien el valor de el 
+key  de lo contrario no podra comparar se con exito
+*/
 ```
+
+
 
 =======
 Errores:
