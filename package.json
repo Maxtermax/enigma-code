@@ -1,22 +1,22 @@
 {
   "name": "enigma-code",
   "version": "0.0.0",
-  "description": "Encrypt es un modulo de el framework de javascript node.js que sirve para encriptar contraseñas, encrypt consta de varias funciones como:encriptar,desencriptar y desencriptar contraseñas",
+  "description": "enigma-code es un modulo de el framework de javascript node.js que sirve para encriptar contraseñas, enigma-code consta de varias funciones como:encriptar,desencriptar y desencriptar contraseñas",
   "main": "index.js",
   "scripts": {
     "test": "node index"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Maxtermax/encrypt-scrypt.git"
+    "url": "https://github.com/Maxtermax/enigma-code.git"
   },
   "keywords": [
     "enigma-code"
   ],
-  "author": "Esneyder Amin <esneyder_a@hotmail.com> (https://github.com/Maxtermax/encrypt-scrypt)",
+  "author": "Esneyder Amin <esneyder_a@hotmail.com> (https://github.com/Maxtermax/enigma-code)",
   "license": "EAPM",
   "bugs": {
     "url": "https://github.com/Maxtermax/encrypt-scrypt/issues"
   },
-  "homepage": "https://github.com/Maxtermax/encrypt-scrypt"
+  "homepage": "https://github.com/Maxtermax/enigma-code"
 }
