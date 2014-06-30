@@ -14,11 +14,11 @@ var funciones={
 				throw new Error('Introduce un valor del tipo numero ');
 			};
 			if( key == undefined || key == null || typeof(key) != "string" || key.length > 11 ){
-				throw new Error('Introduce una contraseña de encriptacion valida minimo de 10 caracteres');
+				throw new Error('Introduce una contraseña de encriptacion valida menor de 10 caracteres mira mas en: https://github.com/Maxtermax/enigma-code');
 			};
 			if( !Reg.test(contra) ){
 				throw new Error('Introduce una contraseña valida minimo de 10 caracteres'
-					+'maximo 15 caracteres si espacios ni signos');
+					+'maximo 15 caracteres si espacios ni signos mira mas en: https://github.com/Maxtermax/enigma-code');
 			};				
 			if(contra == undefined || contra == null || typeof(contra) !== "string"){
 				throw new Error('Introduce un valor del tipo string ')
@@ -131,7 +131,7 @@ if(llave == examen){
   		throw new Error("Antes de comparar necesita un valor de encriptacion"
   		 +"por favor primero definelo con la funcion genHash si ya definiste "
   		 +"la funcion antes mencionada el error esta en que"
-  		 +"genHash y esta funcion comparar se cargan en momentos distintos");
+  		 +"genHash y esta funcion comparar se cargan en momentos distintos mira mas en: https://github.com/Maxtermax/enigma-code");
   	}
   	this.Desencriptar(hash,function(des){
   		if(des == Candidate ){

@@ -104,7 +104,8 @@ importante dejar claro que el valor de encriptacion de el hash
 con el que se quiere  debe ser igual al que se definio en la funcion
 genHash() y tambien el valor de el 
 key  de lo contrario no podra desencriptar con exito
-*/ muy similar a la funcion anterior.
+muy similar a la funcion anterior.
+*/ 
 
 ```
 
