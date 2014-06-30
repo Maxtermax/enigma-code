@@ -30,7 +30,7 @@ Es bastante facil ya que no son muchas las funciones que tiene enigma-code puntu
 
 
 ```javascript
-var enigma=require('enigma-code')
+var enigma=require('enigma-code')//llama el modulo 
 
 var valorEncriptacion=10;//puede ser cualquier numero
 enigma.genHash(valorEncriptacion)//genera el hash de tu contraseña
@@ -38,12 +38,11 @@ enigma.genHash(valorEncriptacion)//genera el hash de tu contraseña
 //que le pases como parametro es de tu eleccion en valor que le pases
 
 var key='millave';
-enigma.genHash(valorEncriptacion,key)el segundo
-/*
-parametro es una llave o key esto es una vale de seguridad 
+enigma.genHash(valorEncriptacion,key)
+/*El segundo parametro es una llave o key esto es una vale de seguridad 
 con el cual todas tus contraseñas seran encriptadas
 sin esto sera imposible desencriptar con exito la longitud de esta llave
-debe ser inferios a 10 caractes, pero si quieres tambien puedes encriptar
+debe ser inferior a 10 caractes, pero si quieres tambien puedes encriptar
 esta llave.
 */
 ```
@@ -56,13 +55,13 @@ exito si el key es el mismo con el que fue encriptada.
 
 enigma.genHash(valorEncriptacion,key,'contraseña123')
 /*
-parametro es la contraseña en texto plano que te interesa encriptar
+El tercer parametro es la contraseña en texto plano que te interesa encriptar
 esta contraseña debe ser validada con una exprecion regular
  de contraseñas que acepte minimo 10 caracteres y maximo 15 o mas 
  por el lado del frontend 
 frontend puedes usar esta por ejemplo:
 	var Reg=new RegExp(/^[a-zA-Z0-9ñ]{10,15}$/).test('min10caracteres');//true
-*/el tercer
+*/
 	
 ```
 Puedes aprender mas sobre expreciones regulares aqui: http://webintenta.com/validacion-con-expresiones-regulares-y-javascript.html
@@ -162,7 +161,6 @@ Este error se produce por que le pasaste como parametro a la funcion genHash()
 un valor no valido como lo es 0 o inferior es decir valores negativo
 ```
 
-Esta es la primero version de encript proximente estara en npm como modulo en produccion.
 
 ##Autor :Esneyder Amin Palacios Mena   || https://www.facebook.com/esnene02
 ##Contacto:@sneyder_a 								 || https://twitter.com/Sneyder_A 

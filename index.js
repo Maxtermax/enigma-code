@@ -33,7 +33,7 @@ var pre=""
 valorEncrypt=N;
 
 if( key.length > contra.length ){
-	throw new Error( 'Error introduce una contraseña con X catacteres' );
+	throw new Error( 'Error introduce un key menor a 10 caracteres' );
 
 }else{
 
@@ -66,7 +66,7 @@ if( N > 50000 ){
 
 
 if( key.length > contra.length ){
-	throw new Error( 'Error introduce una contraseña con X catacteres' );
+	throw new Error( 'Error introduce un key menor a 10 caracteres' );
 }else{
 var pre=""
 
