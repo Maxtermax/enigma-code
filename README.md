@@ -38,18 +38,20 @@ enigma.genHash(valorEncriptacion)//genera el hash de tu contraseña
 //que le pases como parametro es de tu eleccion en valor que le pases
 
 var key='millave';
-enigma.genHash(valorEncriptacion,key)//el segundo
-//parametro es una llave o key esto es una vale de seguridad 
-//con el cual todas tus contraseñas seran encriptadas
-//sin esto sera imposible desencriptar con exito 
+enigma.genHash(valorEncriptacion,key)el segundo
+/*
+parametro es una llave o key esto es una vale de seguridad 
+con el cual todas tus contraseñas seran encriptadas
+sin esto sera imposible desencriptar con exito 
+*/
+```
 
-=======
 Es importante dejar en claro que cada contraseña que encriptes
 con el valor que tenga tu key solo podra se desencriptada con 
 exito si el key es el mismo con el que fue encriptada veremos con mas detalle
 adelante.
 
-
+```javascript
 
 enigma.genHash(valorEncriptacion,key,contraseña123')//el tercer
 //parametro es la contraseña en texto plano que te interesa encriptar
