@@ -99,9 +99,12 @@ enigma.Desencriptar(hash)//el primer parametro que se necesita
 enigma.Desencriptar(hash,function(des){
 	console.log(des);//return desencriptacion
 });//el segundo parametro es una funcion que retorna el hash desencriptado
-// muy similar a la funcion anterior.
-//importante dejar claro que el valor de encriptacion de el hash con el que se quiere  //debe ser igual al que se definio en la funcion genHash() y tambien el valor de el 
-//key  de lo contrario no podra desencriptar con exito
+/*
+importante dejar claro que el valor de encriptacion de el hash
+con el que se quiere  debe ser igual al que se definio en la funcion
+genHash() y tambien el valor de el 
+key  de lo contrario no podra desencriptar con exito
+*/ muy similar a la funcion anterior.
 
 ```
 
