@@ -1,6 +1,6 @@
 {
   "name": "enigma-code",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "enigma-code es un modulo de el framework de javascript node.js que sirve para encriptar contraseñas, enigma-code consta de varias funciones como:encriptar,desencriptar y desencriptar contraseñas",
   "main": "index.js",
   "scripts": {

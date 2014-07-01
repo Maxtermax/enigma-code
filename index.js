@@ -3,6 +3,8 @@ Autor :Esneyder Amin Palacios Mena
 Contacto:@sneyder_a
 Github:https://github.com/Maxtermax
 */
+var	art=require('ascii-art');
+
 var llave="";
 var funciones={
 	genHash:function(N,key,contra,cb){
@@ -145,6 +147,9 @@ if(llave == examen){
 
 module.exports=funciones; //exporta funciones 
 
+art.font('ENIGMA-CODE','Doom','red',function(ren){
+		console.log(ren);
+});
 
 
   
