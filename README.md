@@ -102,7 +102,7 @@ enigma.Desencriptar(hash)//el primer parametro que se necesita
 //en esta funcion es obviamente la hash a desencriptar
 
 //si el valor de encriptacion es distinto al el valor con el que esta encriptado 
-//el hash entonces des encriptara mal.
+//el hash entonces desencriptara mal.
 
 enigma.Desencriptar(hash,function(des){
 	console.log(des);//return desencriptacion
