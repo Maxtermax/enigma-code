@@ -85,14 +85,15 @@ enigma.genHash(valorEncriptacion,key,'contraseña123',function(hash){
 //eso es todo con la funcion de encriptar contraseña o genHash() :)
 ```
 
-
 ## Segunda funcion Desencriptar hash:
+Esta funcion es muy sencilla de usar es importante dejar claro que primero se debe establecer.
+
+El valor de encriptacion con la funcion genHash() 
+es decir la funcion genHash() siempre debe ir declarada primero
+
+
 ```javascript
 
-Esta funcion es muy sencilla de usar es importante dejar claro que primero se debe establecer.
-El valor de encriptacion con la funcion genHash() 
-
-//es decir la funcion genHash() siempre debe ir declarada primero
 
 var hash='ē285ĺ324ķ321Ĭ310ķ321ĺ324ĳ317Ĵ318Į312Ĵ318ľ328Ŀ329İ314';
 
@@ -115,11 +116,11 @@ muy similar a la funcion anterior.
 
 ```
 
-
 ## Tercera funcion Comparar:
-```javascript
 Esta funcion retorna un valor boolean si la contraseña candidata 
 es la misma del hash entonces retornara true de lo contrario false.
+
+```javascript
 
 var hash='ē285ĺ324ķ321Ĭ310ķ321ĺ324ĳ317Ĵ318Į312Ĵ318ľ328Ŀ329İ314';
 
