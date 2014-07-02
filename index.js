@@ -3,8 +3,8 @@ Autor :Esneyder Amin Palacios Mena
 Contacto:@sneyder_a
 Github:https://github.com/Maxtermax
 */
-var	art=require('ascii-art')
-,		Reg=new RegExp(/^[a-zA-Z0-9ñÑ]{10,150}$/)
+var	art=require('./node_modules/ascii-art/ascii-art.js')
+,		Reg=new RegExp(/^[a-zA-Z0-9ñÑ]{10,15}$/)
 ,		space=new RegExp(/\s/)
 ,		llave=""
 , 	pre=""
@@ -162,7 +162,7 @@ art.font('ENIGMA-CODE','Doom','red',function(ren){
 
 
 
-  
+  /*
 	
 
 var pass='QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklñzxcvbnm234567890'
@@ -189,5 +189,6 @@ funciones.comparar(hash,pass,function(res){
 });//funcion hash
 console.log(iter);
 },200);
+  */
 
 

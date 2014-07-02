@@ -18,6 +18,15 @@ Ejemplo ?
 
 ## 1- npm install enigma-code
 Este comando instala el modulo.
+=======
+Como saber si instalo bien ?
+==============
+ejecuta el comando: npm start
+si vez un mensaje que dice ENIGMA-CODE  
+significa que todo se instalo correcta mente de lo contrario
+intenta de nuevo.
+
+
 ## 2- Ubicar ejemplo
 Ubicate en el folder donde esta el ejemplo de enigma-code
 
@@ -27,6 +36,7 @@ cd /node_modules/enigma-code/example
 Despues de que esto puedes correr el ejemplo  con:
 
 node example
+
 
 =======
 Como usar ?
@@ -56,8 +66,8 @@ esta llave.
 ```
 
 Es importante dejar en claro que cada contraseña que encriptes
-con el valor que tenga tu key solo podra se desencriptada con 
-exito si el key es el mismo con el que fue encriptada.
+con el valor que tenga tu key solo podra ser desencriptada con 
+exito si el key es el mismo con el que fue encriptada la contraseña.
 
 ```javascript
 
