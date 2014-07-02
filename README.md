@@ -18,10 +18,10 @@ Ejemplo ?
 
 ## 1- npm install enigma-code
 Este comando instala el modulo.
-=======
-Como saber si instalo bien ?
-==============
-ejecuta el comando: npm start
+
+## Como saber si instalo bien ?
+
+ejecuta el comando: npm start \n
 si vez un mensaje que dice ENIGMA-CODE  
 significa que todo se instalo correcta mente de lo contrario
 intenta de nuevo.
