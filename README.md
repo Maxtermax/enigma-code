@@ -44,7 +44,8 @@ enigma.genHash(valorEncriptacion)//genera el hash de tu contraseña
 //teniendo como base el valor de encriptacion 
 //que le pases como parametro es de tu eleccion en valor que le pases
 
-var key='millave';
+var key='millave';//No debe tener espacios
+
 enigma.genHash(valorEncriptacion,key)
 /*El segundo parametro es una llave o key esto es una vale de seguridad 
 con el cual todas tus contraseñas seran encriptadas

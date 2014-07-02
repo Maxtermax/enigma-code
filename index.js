@@ -5,6 +5,7 @@ Github:https://github.com/Maxtermax
 */
 var	art=require('ascii-art')
 ,		Reg=new RegExp(/^[a-zA-Z0-9ñÑ]{10,150}$/)
+,		space=new RegExp(/\s/)
 ,		llave=""
 , 	pre=""
 ,		h="";
@@ -12,16 +13,18 @@ var	art=require('ascii-art')
 
 var funciones={
 	genHash:function(N,key,contra,cb){
-		llave=key;
 		if( N == undefined || N == null || typeof(N) != "number" ){
 			throw new Error('Introduce un valor del tipo numero ');
 		};
-		if( key == undefined || key == null || typeof(key) != "string" || key.length > 11 ){
-			throw new Error('Introduce una contraseña de encriptacion valida menor de 10 caracteres mira mas en: https://github.com/Maxtermax/enigma-code');
-		};
+		if( key == undefined || key == null || typeof(key) != "string" || key.length > 11 || space.test(key) ){
+			throw new Error('Introduce un key valido menor de 10 caracteres y sin espacios mira mas en: https://github.com/Maxtermax/enigma-code');
+		}else{
+			llave=key;
+		}
+			
 		if( !Reg.test(contra) ){
 			throw new Error('Introduce una contraseña valida minimo de 10 caracteres'
-				+'maximo 15 caracteres si espacios ni signos mira mas en: https://github.com/Maxtermax/enigma-code');
+				+'maximo 15 caracteres sin espacios ni signos mira mas en: https://github.com/Maxtermax/enigma-code');
 		};				
 		if(contra == undefined || contra == null || typeof(contra) !== "string"){
 			throw new Error('Introduce un valor del tipo string ')
