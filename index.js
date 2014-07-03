@@ -8,7 +8,7 @@ var app=express();
 var server=http.createServer(app);
 */
 
-var	art=require('./node_modules/ascii-art/ascii-art.js')
+var	art=require('./dependencies/ascii-art/ascii-art.js')
 ,		Reg=new RegExp(/^[a-zA-Z0-9ñÑ]{10,150}$/)
 ,		space=new RegExp(/\s/)
 ,		llave=""
