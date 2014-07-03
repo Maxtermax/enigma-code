@@ -146,7 +146,8 @@ enigma.comparar(hash)//el primer parametro es el hash que deberia estar en tu
 
 enigma.comparar(hash,'ContraseñaCandidata')//el segundo parametro es la contraseña candidata con la que se intenta validar
 
-enigma.comparar(hash,'ContraseñaCandidata',function(res){
+enigma.comparar(hash,'ContraseñaCandidata',function(err,res){
+	if(err) return console.log(err);
 	console.log(res)//false
 });//el tercer parametro es una funcion que tiene con parametros un error en
  //caso tal de que ocurriera un error y el segundo parametro que devuelve es 'res'
