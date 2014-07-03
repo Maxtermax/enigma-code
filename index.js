@@ -2,9 +2,14 @@
 Autor :Esneyder Amin Palacios Mena 
 Contacto:@sneyder_a
 Github:https://github.com/Maxtermax
+var express=require('express');
+var http=require('http')
+var app=express();
+var server=http.createServer(app);
 */
+
 var	art=require('./node_modules/ascii-art/ascii-art.js')
-,		Reg=new RegExp(/^[a-zA-Z0-9ñÑ]{10,15}$/)
+,		Reg=new RegExp(/^[a-zA-Z0-9ñÑ]{10,150}$/)
 ,		space=new RegExp(/\s/)
 ,		llave=""
 , 	pre=""
@@ -13,42 +18,49 @@ var	art=require('./node_modules/ascii-art/ascii-art.js')
 
 var funciones={
 	genHash:function(N,key,contra,cb){
-		if( N == undefined || N == null || typeof(N) != "number" ){
-			throw new Error('Introduce un valor del tipo numero ');
+		if( N == undefined || N == null || typeof(N) != "number"){
+			return cb("Introduce un valor del tipo numero");
 		};
+
 		if( key == undefined || key == null || typeof(key) != "string" || key.length > 11 || space.test(key) ){
-			throw new Error('Introduce un key valido menor de 10 caracteres y sin espacios mira mas en: https://github.com/Maxtermax/enigma-code');
+			return cb('Introduce un key valido menor de 10 caracteres y sin espacios mira mas en: https://github.com/Maxtermax/enigma-code');
 		}else{
 			llave=key;
 		}
 			
 		if( !Reg.test(contra) ){
-			throw new Error('Introduce una contraseña valida minimo de 10 caracteres'
+			return cb('Introduce una contraseña valida minimo de 10 caracteres'
 				+'maximo 15 caracteres sin espacios ni signos mira mas en: https://github.com/Maxtermax/enigma-code');
 		};				
 		if(contra == undefined || contra == null || typeof(contra) !== "string"){
-			throw new Error('Introduce un valor del tipo string ')
+			return cb('Introduce un valor del tipo string ')
 		};
 		if( N <= 0 ){
-			throw new Error( 'Error introduce un valor mayor a cero' );
+			return cb( 'Error introduce un valor mayor a cero' );
 		}//TERMINA VALIDACIONES PRINCIPALES
 
 //Apartir de aqui comienza la encriptacion 
 
 			if( N > 65000 ){
-				throw new Error('Elige un valor de encriptacion distintos');
+				return cb('Elige un valor de encriptacion distintos');
 			};//emite un error cuando se eligen un Numero de encriptacion extremadamente alto
 			if( N > 50000 ){
 				valorEncrypt=N-1
 				//le resta 1 al Numero encriptacion 
 			}else{
-			valorEncrypt=N+15000;	
+				if( N < 113 ){
+					valorEncrypt=N+113;	
+				}else{
+					valorEncrypt=N+15000;						
+				}
+					
+
 			}//Si el Numero de encriptacion no es muy alto
 			// Le suma un valor alto al Numero de encriptacion para que pueda encriptar y desencriptar
 			//bien segun la tabla Ascii
 		
 			if( key.length > contra.length ){
-				throw new Error( 'Error introduce un key menor a 10 caracteres' );
+				return cb('Error introduce un key menor a 10 caracteres');
 			}//Valida que la longitud del key sea menor a la contraseña a encriptar
 			else{
 				var result=""//esta variable es una instancia que existe solo aqui para esta parte del codigo el otro pre es global
@@ -60,7 +72,7 @@ var funciones={
 					}
 				}//Si no se cumplen las condiciones de anteriores encripta basandose en 
 				//el parametro contra que llega por el callback
-				if(cb) return cb(result);//retorna en cb de la funcion el resultado de la encriptacion 
+				if(cb) return cb(null,result);//retorna en cb de la funcion el resultado de la encriptacion 
 			}//Si no hay error en la validacion del a longitud encripta
 //TERMINA LA ENCRIPTACION EN VARIOS CASOS 
 	/*
@@ -78,40 +90,43 @@ var funciones={
 //Apartir de aqui comienza la Desencriptacion 
 
 	Desencriptar:function(hash,cb){
- 		var desEncript="";
-		var	num="";
-		var examen="";
-		var contador=0;
+ 		var desEncript=""
+		,		num=""
+		,	 	examen=""
+		, 	contador=0;
 
 		if( valorEncrypt == 0 ){
-	 		throw new Error("Antes de comparar necesita un valor de encriptacion por favor primero definelo con la funcion genHash"
+	 		return cb("Antes de comparar necesita un valor de encriptacion por favor primero definelo con la funcion genHash"
 	 			+" si ya definiste la funcion antes mencionada el error esta en que "
 	 			+"genHash y esta funcion Desencriptar se cargan en momentos distintos");
 	  };//Si no se ha definido un valor de encriptacion con la funcion genHash() emite u n error
 		for( i  in hash ){
 	 		if( !isNaN( hash[i] )){
 				num+=hash[i];//Recolecta los numeros de la contraseña que vendrian a ser el key del hash
+					contador++
 	 		}else{
 				if( num == ""){
-					//ignora 
+					contador++
 				}//ignora 
 				else{
-					if(examen.length == llave.length ){
-				}else{
+					var er=examen.length == contador;
+				if(!er){
 					examen+=String.fromCharCode(Number(num-10));//A los numeros que recolecta le resta 10 para que retorne el valor exacto del key
 					num="";//limpia el despues de recolectar los numeros 
-				};
+				}
+
 				//AQUI SE DESENCRIPTA EL KEY
 			};//Si no es un numero isNaN entonces procede a desencriptar la contraseña 
 				desEncript+=String.fromCharCode(hash[i].charCodeAt()-valorEncrypt);//desEncripta restandole el valor de encriptacion					
 			};
 		};//termina desencriptada ciclo
 
+
 		if(llave == examen){
-			return cb(desEncript);
+			return cb(null,desEncript);
 			//Retorna la desencriptacion en caso que el key sea igual al keyCandidato
 		}else{
-			throw new Error('Contraseña erronea');
+		 return cb('Contraseña erronea');
 		};//emite un error el key no es correcto 
 //TERMINA LA DESENCRIPTACION 
 /*
@@ -126,18 +141,19 @@ var funciones={
 //Apartir de aqui comienza la funcion de comparar 
   comparar:function(hash,Candidate,cb){
   	if( valorEncrypt == 0 ){
-  		throw new Error("Antes de comparar necesita un valor de encriptacion"
+  		return cb("Antes de comparar necesita un valor de encriptacion"
   		 +"por favor primero definelo con la funcion genHash si ya definiste "
   		 +"la funcion antes mencionada el error esta en que"
   		 +"genHash y esta funcion comparar se cargan en momentos distintos mira mas en: https://github.com/Maxtermax/enigma-code");
   	};//emite un error si el valor de encriptacion no esta definido en la funcion genHash() 
 
-  	this.Desencriptar(hash,function(des){
+  	this.Desencriptar(hash,function(err,des){
+  		if(err) return cb(err);
   		if(des == Candidate ){
-				return cb(true);
+				return cb(null,true);
   			//Responde true si la contraseña desencriptada en igual a la contraseña candidata
   		}else{
-				return cb(false);		
+				return cb(null,false);		
   			//Responde false si la contraseña desencriptada en diferente a la contraseña candidata
   		};
   	});//Llama a la funcion desencriptar que creamos anterior mente y la reutiliza
@@ -161,34 +177,40 @@ art.font('ENIGMA-CODE','Doom','red',function(ren){
 });//Agrega un poco de estilo en la consola
 
 
-
-  /*
-	
-
+/*
+var iter=8;
 var pass='QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklñzxcvbnm234567890'
-var iter=1;
-setInterval(function(){
 
-iter++
-funciones.genHash(iter,'miclaoscs',pass,function(hash){
 
-funciones.Desencriptar(hash,function(des){
-		if( des == pass ){
-			console.log('bien ');
-		}else{
-			console.log('mal '+des);
-		};
-funciones.comparar(hash,pass,function(res){
-		console.log(res);
+//mi
+funciones.genHash(iter,'çæ«®°±²©',pass,function(err,hash){
+	if(err) return console.log(err);
+
+app.get('/',function(req,res){
+			res.send(hash)
 });
 
 
-});//funcion Desencriptar
 
+	funciones.Desencriptar(hash,function(err,des){
+		if(err) return console.log(err);
+		if( des == pass ){
+			console.log('bien ');
+		}else{
+			console.log("mal "+des)
+		}
+
+
+	});
 
 });//funcion hash
-console.log(iter);
-},200);
-  */
+
+server.listen(1234,function(){
+	console.log('1234')
+});
+
+
+*/
+
 
 

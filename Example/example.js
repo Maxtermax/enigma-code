@@ -26,15 +26,17 @@ app.get('/',function(req,res){
 });
 app.post('/',function(req,res){
 
-enigma.genHash(90,'miLlave:p',req.body.pass,function(hash){
-			res.send(hash);
+enigma.genHash(90,'miLlave:p',req.body.pass,function(err,hash){
+		if(err) return console.log(err);
+		res.send(hash);
 });//genera hash con un numero de encriptacion cualquiera 
 	
 });
 
 app.put('/',function(req,res){
 
-enigma.Desencriptar(req.body.passU,function(des){
+enigma.Desencriptar(req.body.passU,function(err,des){
+			if(err) return console.log(err);
 			res.send(des);//return des encriptacion
 });//end desencriptar pass 
 	

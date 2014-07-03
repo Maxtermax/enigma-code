@@ -30,12 +30,12 @@ intenta de nuevo.
 ## 2- Ubicar ejemplo
 Ubicate en el folder donde esta el ejemplo de enigma-code
 
-cd /node_modules/enigma-code/example
+cd example 
 
 ##3- node example
 Despues de que esto puedes correr el ejemplo  con:
 
-node example
+node example.js
 
 
 =======
@@ -86,11 +86,13 @@ Puedes aprender mas sobre expreciones regulares aqui: http://webintenta.com/vali
 ```javascript
 
 
-enigma.genHash(valorEncriptacion,key,'contraseña123',function(hash){
+enigma.genHash(valorEncriptacion,key,'contraseña123',function(err,hash){
+	if(err) return console.log(err);//Solo se ejecutara si existe un error
 	console.log(hash)//2dl3lkwkj13kj12k12kj321kj
 //esa funcion retorna por defecto en hash la contraseña encriptada
 
-});//el cuarto paramtro es una funcion la cual devuelve el 'hash' 
+});//el cuarto paramtro es una funcion que tiene con parametros un error en caso tal de
+//que ocurriera un error y el segundo parametro que devuelve es el 'hash' 
 //es decir la contraseña encriptada es importante pedirlo en el callback de la funcion
 
 //eso es todo con la funcion de encriptar contraseña o genHash() :)
@@ -114,9 +116,13 @@ enigma.Desencriptar(hash)//el primer parametro que se necesita
 //si el valor de encriptacion es distinto al el valor con el que esta encriptado 
 //el hash entonces desencriptara mal.
 
-enigma.Desencriptar(hash,function(des){
+enigma.Desencriptar(hash,function(err,des){
+	if(err) return console.log(err);
 	console.log(des);//return desencriptacion
-});//el segundo parametro es una funcion que retorna el hash desencriptado
+});//el segundo parametro es una funcion que tiene con parametros un error en
+ //caso tal de que ocurriera un error y el segundo parametro que devuelve es 'des'
+// es decir la contraseña desencriptada
+
 /*
 importante dejar claro que el valor de encriptacion de el hash
 con el que se quiere  debe ser igual al que se definio en la funcion
@@ -142,12 +148,15 @@ enigma.comparar(hash,'ContraseñaCandidata')//el segundo parametro es la contras
 
 enigma.comparar(hash,'ContraseñaCandidata',function(res){
 	console.log(res)//false
-});
-/*
-el terce parametro es una funcion que retorna la respueta en un valor boolean es 
-decir si la contraseña candita es igual al hash retorna true de lo contrario no
+});//el tercer parametro es una funcion que tiene con parametros un error en
+ //caso tal de que ocurriera un error y el segundo parametro que devuelve es 'res'
+// es decir la respuesta de si la contraseña candidata es igual a el hash o no 
+//'res' es un valor boolean que retorna true o false
 
-importante dejar claro que el valor de encriptacion de el hash que se quiere compara 
+
+
+/*
+Importante dejar claro que el valor de encriptacion de el hash que se quiere compara 
 debe ser igual al que se definio en la funcion genHash() y tambien el valor de el 
 key  de lo contrario no podra comparar se con exito
 */
@@ -182,6 +191,32 @@ llamada "funcion Generar hash".
 Este error se produce por que le pasaste como parametro a la funcion genHash()
 un valor no valido como lo es 0 o inferior es decir valores negativo
 ```
+
+## "Error introduce un valor mayor a cero"
+
+```
+Este error se produce por que le pasaste como parametro a la funcion genHash()
+un valor no valido como lo es 0 o inferior es decir valores negativo
+```
+
+
+## "Error Introduce una contraseña valida"
+```
+Este error se produce por que en la funcion genHash() esta especificado que el 
+parametro de la contraseña debe ser de minimo 10 caracteres y maximo 15 y sin espacios
+para solucionar lo solo tienes que cumplir las reglas anterios mente mencionadas
+puedes usar una exprecion regular tambien te recomiendo que sigas este tutorial 
+si no conoces bien las expreciones regulares: http://webintenta.com/validacion-con-expresiones-regulares-y-javascript.html 
+```
+## "Contraseña erronea"
+```
+Este error se produce cuando intentas desencriptar o compara una contraseña 
+con el key o llave incorrecto con esto me refiero a que el key con el cual 
+fue encriptada la contraseña originalmente es distinto al que definiste en la funcion genHash(), para solucionarlo debes introducir el key correcto.
+
+```
+
+
 
 
 ##Autor :Esneyder Amin Palacios Mena   https://www.facebook.com/esnene02
