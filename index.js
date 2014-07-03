@@ -19,30 +19,30 @@ var	art=require('./dependencies/ascii-art/ascii-art.js')
 var funciones={
 	genHash:function(N,key,contra,cb){
 		if( N == undefined || N == null || typeof(N) != "number"){
-			return cb("Introduce un valor del tipo numero");
+			return cb(new Error("Introduce un valor del tipo numero"));
 		};
 
 		if( key == undefined || key == null || typeof(key) != "string" || key.length > 11 || space.test(key) ){
-			return cb('Introduce un key valido menor de 10 caracteres y sin espacios mira mas en: https://github.com/Maxtermax/enigma-code');
+			return cb(new Error('Introduce un key valido menor de 10 caracteres y sin espacios mira mas en: https://github.com/Maxtermax/enigma-code'));
 		}else{
 			llave=key;
 		}
 			
 		if( !Reg.test(contra) ){
-			return cb('Introduce una contraseña valida minimo de 10 caracteres'
-				+'maximo 15 caracteres sin espacios ni signos mira mas en: https://github.com/Maxtermax/enigma-code');
+			return cb(new Error('Introduce una contraseña valida minimo de 10 caracteres'
+				+'maximo 15 caracteres sin espacios ni signos mira mas en: https://github.com/Maxtermax/enigma-code'));
 		};				
 		if(contra == undefined || contra == null || typeof(contra) !== "string"){
-			return cb('Introduce un valor del tipo string ')
+			return cb(new Error('Introduce un valor del tipo string '));
 		};
 		if( N <= 0 ){
-			return cb( 'Error introduce un valor mayor a cero' );
+			return cb(new Error('Error introduce un valor mayor a cero'));
 		}//TERMINA VALIDACIONES PRINCIPALES
 
 //Apartir de aqui comienza la encriptacion 
 
 			if( N > 65000 ){
-				return cb('Elige un valor de encriptacion distintos');
+				return cb(new Error('Elige un valor de encriptacion distintos'));
 			};//emite un error cuando se eligen un Numero de encriptacion extremadamente alto
 			if( N > 50000 ){
 				valorEncrypt=N-1
@@ -60,7 +60,7 @@ var funciones={
 			//bien segun la tabla Ascii
 		
 			if( key.length > contra.length ){
-				return cb('Error introduce un key menor a 10 caracteres');
+				return cb(new Error('Error introduce un key menor a 10 caracteres'));
 			}//Valida que la longitud del key sea menor a la contraseña a encriptar
 			else{
 				var result=""//esta variable es una instancia que existe solo aqui para esta parte del codigo el otro pre es global
@@ -96,9 +96,9 @@ var funciones={
 		, 	contador=0;
 
 		if( valorEncrypt == 0 ){
-	 		return cb("Antes de comparar necesita un valor de encriptacion por favor primero definelo con la funcion genHash"
+	 		return cb(new Error("Antes de comparar necesita un valor de encriptacion por favor primero definelo con la funcion genHash"
 	 			+" si ya definiste la funcion antes mencionada el error esta en que "
-	 			+"genHash y esta funcion Desencriptar se cargan en momentos distintos");
+	 			+"genHash y esta funcion Desencriptar se cargan en momentos distintos"));
 	  };//Si no se ha definido un valor de encriptacion con la funcion genHash() emite u n error
 		for( i  in hash ){
 	 		if( !isNaN( hash[i] )){
@@ -126,7 +126,7 @@ var funciones={
 			return cb(null,desEncript);
 			//Retorna la desencriptacion en caso que el key sea igual al keyCandidato
 		}else{
-		 return cb('Contraseña erronea');
+		 return cb(new Error('Contraseña erronea'));
 		};//emite un error el key no es correcto 
 //TERMINA LA DESENCRIPTACION 
 /*
@@ -141,10 +141,10 @@ var funciones={
 //Apartir de aqui comienza la funcion de comparar 
   comparar:function(hash,Candidate,cb){
   	if( valorEncrypt == 0 ){
-  		return cb("Antes de comparar necesita un valor de encriptacion"
+  		return cb(new Error("Antes de comparar necesita un valor de encriptacion"
   		 +"por favor primero definelo con la funcion genHash si ya definiste "
   		 +"la funcion antes mencionada el error esta en que"
-  		 +"genHash y esta funcion comparar se cargan en momentos distintos mira mas en: https://github.com/Maxtermax/enigma-code");
+  		 +"genHash y esta funcion comparar se cargan en momentos distintos mira mas en: https://github.com/Maxtermax/enigma-code"));
   	};//emite un error si el valor de encriptacion no esta definido en la funcion genHash() 
 
   	this.Desencriptar(hash,function(err,des){
@@ -176,9 +176,8 @@ art.font('ENIGMA-CODE','Doom','red',function(ren){
 		console.log(ren);
 });//Agrega un poco de estilo en la consola
 
-
 /*
-var iter=8;
+var iter=90;
 var pass='QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklñzxcvbnm234567890'
 
 
@@ -204,13 +203,14 @@ app.get('/',function(req,res){
 	});
 
 });//funcion hash
-
+/*
 server.listen(1234,function(){
 	console.log('1234')
 });
-
+*/
 
 */
+
 
 
 
