@@ -1,5 +1,5 @@
 var http=require('http')
-,		express=require('../node_modules/express/index.js')
+,		express=require('../dependencies/express/index.js')
 ,		app=express()
 ,		fs=require('fs')
 ,		server=http.createServer(app)
