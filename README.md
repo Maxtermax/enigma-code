@@ -30,7 +30,7 @@ intenta de nuevo.
 ## 2- Ubicar ejemplo
 Ubicate en el folder donde esta el ejemplo de enigma-code
 
-cd example 
+cd /node_modules/enigma-code/example 
 
 ##3- node example
 Despues de que esto puedes correr el ejemplo  con:

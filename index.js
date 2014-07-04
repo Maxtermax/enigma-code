@@ -203,14 +203,8 @@ app.get('/',function(req,res){
 	});
 
 });//funcion hash
-/*
+
 server.listen(1234,function(){
 	console.log('1234')
 });
 */
-
-*/
-
-
-
-
