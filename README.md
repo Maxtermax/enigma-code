@@ -1,5 +1,3 @@
-# Enigma-code
-
 ![alt tag](http://www.enigma-replica.com/LampPanel/NewLampFilmEnigma6Web.jpg)
 
 
@@ -14,7 +12,7 @@ Es un sencillo modulo hecho en el framework de javascript node.js que sirve para
 ## 1 npm install enigma-code
 
 ```sh 
-	npm install enigma-code
+ npm install enigma-code
 ```
 
 Este comando instala el modulo.
@@ -32,11 +30,11 @@ Ubicate en el folder donde esta el ejemplo de enigma-code
 
 cd /node_modules/enigma-code/example 
 
-## 3 Ejecutalo
+## 3 Ejecuta el ejemplo
 Despues de que esto puedes correr el ejemplo  con:
 
 ```sh
- node example.js
+node example.js
 ```
 
 # ¿Como usar?
@@ -76,7 +74,7 @@ Es importante dejar en claro que cada contraseña que encriptes
 con el valor que tenga tu key solo podra ser desencriptada con 
 exito si el key es el mismo con el que fue encriptada la contraseña.
 
-Puedes aprender mas sobre expreciones regulares aqui: http://webintenta.com/validacion-con-expresiones-regulares-y-javascript.html
+Puedes aprender mas sobre expreciones regulares aqui: http://regexr.com/
 
 
 ## Desencriptar
