@@ -1,19 +1,14 @@
-=======
-Enigma-code 
-==============
+# Enigma-code
 
 ![alt tag](http://www.enigma-replica.com/LampPanel/NewLampFilmEnigma6Web.jpg)
 
-=======
-Que es enigma-code ?
-==============
 
+# ¿Que es enigma-code?
 
 Es un sencillo modulo hecho en el framework de javascript node.js que sirve para encriptar contraseñas con varias funciones para comparar, desencriptar etc.
 
-=======
-Ejemplo ?
-==============
+# ¿Ejemplo?
+
  Claro puedes correr un pequeño ejemplo y ver la magia este modulo para hacer esto sigue los siguientes pasos:
 
 ## 1- npm install enigma-code
@@ -32,71 +27,52 @@ Ubicate en el folder donde esta el ejemplo de enigma-code
 
 cd /node_modules/enigma-code/example 
 
-##3- node example
+## 3- node example
 Despues de que esto puedes correr el ejemplo  con:
 
-node example.js
+`sh
+ node example.js
+`
 
-
-=======
-Como usar ?
-==============
+# Como usar ?
 Es bastante facil ya que no son muchas las funciones que tiene enigma-code puntualmente funciona de la siguiente forma:
 
-## Primera funcion Generar hash:
-
+## Generar hash:
 
 ```javascript
-var enigma=require('enigma-code')//llama el modulo 
+const enigma=require('enigma-code')//llama el modulo 
+const valorEncriptacion=10;//puede ser cualquier numero
+let key='millave';//No debe tener espacios
 
-var valorEncriptacion=10;//puede ser cualquier numero
-enigma.genHash(valorEncriptacion)//genera el hash de tu contraseña
-//teniendo como base el valor de encriptacion 
+enigma.genHash(valorEncriptacion,key,'contraseña123',function(err,hash){
+	if(err) return console.log(err);//Solo se ejecutara si existe un error
+	console.log(hash)//2dl3lkwkj13kj12k12kj321kj
+//esa funcion retorna por defecto en hash la contraseña encriptada
+});
+
 //que le pases como parametro es de tu eleccion en valor que le pases
 
-var key='millave';//No debe tener espacios
-
-enigma.genHash(valorEncriptacion,key)
 /*El segundo parametro es una llave o key esto es una vale de seguridad 
 con el cual todas tus contraseñas seran encriptadas
 sin esto sera imposible desencriptar con exito la longitud de esta llave
 debe ser inferior a 10 caractes, pero si quieres tambien puedes encriptar
 esta llave.
 */
+
+/*
+ el cuarto paramtro es una funcion que tiene con parametros un error en caso tal de
+ que ocurriera un error y el segundo parametro que devuelve es el 'hash' 
+ es decir la contraseña encriptada es importante pedirlo en el callback de la funcion
+*/
+//eso es todo con la funcion de encriptar contraseña o genHash() :)
 ```
 
 Es importante dejar en claro que cada contraseña que encriptes
 con el valor que tenga tu key solo podra ser desencriptada con 
 exito si el key es el mismo con el que fue encriptada la contraseña.
 
-```javascript
-
-enigma.genHash(valorEncriptacion,key,'contraseña123')
-/*
-El tercer parametro es la contraseña en texto plano que te interesa encriptar
-esta contraseña debe ser validada con una exprecion regular
-de contraseñas que acepte minimo 10 caracteres y maximo 15 o mas 
-por el lado del frontend puedes usar esta por ejemplo:
-	var Reg=new RegExp(/^[a-zA-Z0-9ñ]{10,15}$/).test('min10caracteres');//true
-*/
-	
-```
 Puedes aprender mas sobre expreciones regulares aqui: http://webintenta.com/validacion-con-expresiones-regulares-y-javascript.html
 
-```javascript
-
-
-enigma.genHash(valorEncriptacion,key,'contraseña123',function(err,hash){
-	if(err) return console.log(err);//Solo se ejecutara si existe un error
-	console.log(hash)//2dl3lkwkj13kj12k12kj321kj
-//esa funcion retorna por defecto en hash la contraseña encriptada
-
-});//el cuarto paramtro es una funcion que tiene con parametros un error en caso tal de
-//que ocurriera un error y el segundo parametro que devuelve es el 'hash' 
-//es decir la contraseña encriptada es importante pedirlo en el callback de la funcion
-
-//eso es todo con la funcion de encriptar contraseña o genHash() :)
-```
 
 ## Segunda funcion Desencriptar hash:
 Esta funcion es muy sencilla de usar es importante dejar claro que primero se debe establecer.
@@ -164,10 +140,7 @@ key  de lo contrario no podra comparar se con exito
 ```
 
 
-
-=======
-Errores:
-==============
+# Errores:
 
 ## "Antes de comparar necesita un valor de encriptacion"
 
@@ -222,8 +195,8 @@ fue encriptada la contraseña originalmente es distinto al que definiste en la f
 
 ##Autor :Esneyder Amin Palacios Mena   https://www.facebook.com/esnene02
 ##Contacto:
-##	1- esneyder_a@hotmail.com 
+##  1- esneyder_a@hotmail.com 
 ##  2- esnene02@gmail.com 
 ##  3- https://twitter.com/Sneyder_A 
-##From @Quibdojs  		 								 https://twitter.com/QuibdoJs
-##Github:https://github.com/Maxtermax
+## From @Quibdojs  		 								 https://twitter.com/QuibdoJs
+## Github: https://github.com/Maxtermax
