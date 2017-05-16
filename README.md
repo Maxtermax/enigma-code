@@ -1,37 +1,18 @@
 # ¿Que es enigma-code?
 
-Es un sencillo modulo hecho en el framework de javascript node.js que sirve para encriptar contraseñas con varias funciones para comparar, desencriptar etc.
+Es un sencillo modulo hecho en nodejs que sirve para encriptar contraseñas con varias funciones para comparar, desencriptar etc.
 
-# ¿Ejemplo?
-
- Claro puedes correr un pequeño ejemplo y ver la magia este modulo para hacer esto sigue los siguientes pasos:
-
-## 1 npm install enigma-code
+## Instalacion
 
 ```sh 
  npm install enigma-code
 ```
 
-Este comando instala el modulo.
-
-## Como saber si instalo bien ?
-
-ejecuta el comando: `npm start`
-si vez un mensaje que dice "ENIGMA-CODE"
-significa que todo se instalo correcta mente de lo contrario
-intenta de nuevo.
-
-
-## 2 Ubicar ejemplo
-Ubicate en el folder donde esta el ejemplo de enigma-code
-
-cd /node_modules/enigma-code/example 
-
-## 3 Ejecuta el ejemplo
-Despues de que esto puedes correr el ejemplo  con:
+# ¿Ejemplo?
+ Claro puedes correr un pequeño ejemplo y ver la magia este modulo para hacer esto:
 
 ```sh
-node example.js
+ npm run test
 ```
 
 # ¿Como usar?
@@ -84,7 +65,7 @@ es decir la funcion genHash() siempre debe ir declarada primero
 ```javascript
 
 
-var hash='ē285ĺ324ķ321Ĭ310ķ321ĺ324ĳ317Ĵ318Į312Ĵ318ľ328Ŀ329İ314';
+let hash ='ē285ĺ324ķ321Ĭ310ķ321ĺ324ĳ317Ĵ318Į312Ĵ318ľ328Ŀ329İ314';
 
 enigma.Desencriptar(hash)//el primer parametro que se necesita
 //en esta funcion es obviamente la hash a desencriptar
@@ -100,11 +81,11 @@ enigma.Desencriptar(hash,function(err,des){
 // es decir la contraseña desencriptada
 
 /*
-importante dejar claro que el valor de encriptacion de el hash
-con el que se quiere  debe ser igual al que se definio en la funcion
-genHash() y tambien el valor de el 
-key  de lo contrario no podra desencriptar con exito
-muy similar a la funcion anterior.
+	importante dejar claro que el valor de encriptacion de el hash
+	con el que se quiere  debe ser igual al que se definio en la funcion
+	genHash() y tambien el valor de el 
+	key  de lo contrario no podra desencriptar con exito
+	muy similar a la funcion anterior.
 */ 
 
 ```

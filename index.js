@@ -4,15 +4,15 @@ Contacto:@sneyder_a
 Github:https://github.com/Maxtermax
 */
 
-const art = require('ascii-art');
-let	Reg = new RegExp(/^[a-zA-Z0-9ñÑ]{10,150}$/);
+let	Reg = new RegExp(/^[a-zA-Z0-9ñÑ]{8,150}$/);
 let	space = new RegExp(/\s/);
 let	llave = "";
 let	pre = "";
 let	h = "";
+let valorEncrypt; 
 
 let funciones = {
-	genHash:function(N,key,contra,cb){
+	genHash:function(N, key, contra, cb){
 		if( N === undefined || N === null || typeof(N) !== "number"){
 			return cb(new Error("Introduce un valor del tipo numero"));
 		};
@@ -24,8 +24,8 @@ let funciones = {
 		}
 			
 		if(!Reg.test(contra)){
-			return cb(new Error('Introduce una contraseña valida minimo de 10 caracteres'
-				+'maximo 15 caracteres sin espacios ni signos mira mas en: https://github.com/Maxtermax/enigma-code'));
+			return cb(new Error('Introduce una contraseña valida minimo de 10 caracteres '
+				+'sin espacios ni signos mira mas en: https://github.com/Maxtermax/enigma-code'));
 		}
 
 		if(contra === undefined || contra === null || typeof(contra) !== "string"){
@@ -80,7 +80,7 @@ let funciones = {
 
 //Apartir de aqui comienza la Desencriptacion 
 
-	Desencriptar:function(hash, cb){
+	Desencriptar: function(hash, cb){
  		let desEncript = "";
 		let	num = "";
 		let examen = "";
@@ -130,7 +130,7 @@ let funciones = {
 	},//termina desencriptar
 
 	//Apartir de aqui comienza la funcion de comparar 
-  comparar:function(hash,Candidate,cb){
+  comparar: function(hash, Candidate, cb){
   	if( valorEncrypt === 0 ){
   		return cb(new Error("Antes de comparar necesita un valor de encriptacion"
   		 +"por favor primero definelo con la funcion genHash si ya definiste "

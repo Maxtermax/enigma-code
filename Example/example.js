@@ -1,51 +1,20 @@
-var http=require('http')
-,		express=require('express')
-,		app=express()
-,		fs=require('fs')
-,		server=http.createServer(app)
-,		enigma=require('../index.js')
-/*
-go
-*/
+const	enigma=require('../index.js')
+let password = "micontra1234567";
+let key = 'millave';
 
+console.log('password', password);
 
-app.configure(function(){
-		app.use(express.static(__dirname+'/'));
-		app.use(express.static(__dirname+'/views'));
-		app.use(express.json());
-		app.use(express.urlencoded());
-		app.use(express.methodOverride());
-});
-
-
-
-app.get('/',function(req,res){
-
-		res.sendfile(__dirname+'/index.html','utf-8');
-
-});
-app.post('/',function(req,res){
-
-enigma.genHash(90,'miLlave:p',req.body.pass,function(err,hash){
+enigma.genHash(90, key, password, function(err, hash){
+	if(err) return console.log(err);
+	console.log('hash', hash);
+	
+	enigma.comparar(hash, password, function(err, response){
 		if(err) return console.log(err);
-		res.send(hash);
-});//genera hash con un numero de encriptacion cualquiera 
+		if(response) return console.log("Test passed");
+		return console.error("Test not passed");
+	})
+})
+
+
 	
-});
-
-app.put('/',function(req,res){
-
-enigma.Desencriptar(req.body.passU,function(err,des){
-			if(err) return console.log(err);
-			res.send(des);//return des encriptacion
-});//end desencriptar pass 
-	
-		
-});
-
-
-
-server.listen(1234,function(){
-	console.log("Listen on port: "+server.address().port);
-});
 
