@@ -11,38 +11,43 @@ Es un sencillo modulo hecho en el framework de javascript node.js que sirve para
 
  Claro puedes correr un pequeño ejemplo y ver la magia este modulo para hacer esto sigue los siguientes pasos:
 
-## 1- npm install enigma-code
+## 1 npm install enigma-code
+
+```sh 
+	npm install enigma-code
+```
+
 Este comando instala el modulo.
 
 ## Como saber si instalo bien ?
 
-ejecuta el comando: npm start \n
-si vez un mensaje que dice ENIGMA-CODE  
+ejecuta el comando: `npm start`
+si vez un mensaje que dice "ENIGMA-CODE"
 significa que todo se instalo correcta mente de lo contrario
 intenta de nuevo.
 
 
-## 2- Ubicar ejemplo
+## 2 Ubicar ejemplo
 Ubicate en el folder donde esta el ejemplo de enigma-code
 
 cd /node_modules/enigma-code/example 
 
-## 3- node example
+## 3 Ejecutalo
 Despues de que esto puedes correr el ejemplo  con:
 
-`sh
+```sh
  node example.js
-`
+```
 
-# Como usar ?
+# ¿Como usar?
 Es bastante facil ya que no son muchas las funciones que tiene enigma-code puntualmente funciona de la siguiente forma:
 
 ## Generar hash:
 
 ```javascript
-const enigma=require('enigma-code')//llama el modulo 
-const valorEncriptacion=10;//puede ser cualquier numero
-let key='millave';//No debe tener espacios
+const enigma = require('enigma-code');//llama el modulo 
+const valorEncriptacion = 10;//puede ser cualquier numero
+let key = 'millave';//No debe tener espacios
 
 enigma.genHash(valorEncriptacion,key,'contraseña123',function(err,hash){
 	if(err) return console.log(err);//Solo se ejecutara si existe un error
@@ -74,7 +79,7 @@ exito si el key es el mismo con el que fue encriptada la contraseña.
 Puedes aprender mas sobre expreciones regulares aqui: http://webintenta.com/validacion-con-expresiones-regulares-y-javascript.html
 
 
-## Segunda funcion Desencriptar hash:
+## Desencriptar
 Esta funcion es muy sencilla de usar es importante dejar claro que primero se debe establecer.
 
 El valor de encriptacion con la funcion genHash() 
@@ -109,7 +114,7 @@ muy similar a la funcion anterior.
 
 ```
 
-## Tercera funcion Comparar:
+## Comparar:
 Esta funcion retorna un valor boolean si la contraseña candidata 
 es la misma del hash entonces retornara true de lo contrario false.
 
@@ -142,61 +147,49 @@ key  de lo contrario no podra comparar se con exito
 
 # Errores:
 
-## "Antes de comparar necesita un valor de encriptacion"
+## Antes de comparar necesita un valor de encriptacion
 
-```
 Es por que no haz definido el valor de encriptacion con la funcion 
 genHash() si no sabes cual esta funcion:ve hacia la seccion como usar enigma y busca 
 la primera funcion de todas llamada "funcion Generar hash"
-```
-## "Antes de Desenciptar necesita un valor de encriptacion"
-```
+
+
+## Antes de Desenciptar necesita un valor de encriptacion
 
 Es por que no haz definido el valor de encriptacion con la funcion genHash() 
 si no sabes cual esta funcion
 
 ve hacia la seccion como usar enigma y busca la funcion principal
 llamada "funcion Generar hash".
-```
 
-## "Error introduce un valor mayor a cero"
 
-```
+## Error introduce un valor mayor a cero
+
 Este error se produce por que le pasaste como parametro a la funcion genHash()
 un valor no valido como lo es 0 o inferior es decir valores negativo
-```
 
-## "Error introduce un valor mayor a cero"
 
-```
+## Error introduce un valor mayor a cero
+
 Este error se produce por que le pasaste como parametro a la funcion genHash()
 un valor no valido como lo es 0 o inferior es decir valores negativo
-```
 
+## Error Introduce una contraseña valida
 
-## "Error Introduce una contraseña valida"
-```
 Este error se produce por que en la funcion genHash() esta especificado que el 
 parametro de la contraseña debe ser de minimo 10 caracteres y maximo 15 y sin espacios
 para solucionar lo solo tienes que cumplir las reglas anterios mente mencionadas
 puedes usar una exprecion regular tambien te recomiendo que sigas este tutorial 
 si no conoces bien las expreciones regulares: http://webintenta.com/validacion-con-expresiones-regulares-y-javascript.html 
-```
-## "Contraseña erronea"
-```
+
+## Contraseña erronea
+
 Este error se produce cuando intentas desencriptar o compara una contraseña 
 con el key o llave incorrecto con esto me refiero a que el key con el cual 
 fue encriptada la contraseña originalmente es distinto al que definiste en la funcion genHash(), para solucionarlo debes introducir el key correcto.
 
-```
 
 
-
-
-##Autor :Esneyder Amin Palacios Mena   https://www.facebook.com/esnene02
-##Contacto:
-##  1- esneyder_a@hotmail.com 
-##  2- esnene02@gmail.com 
-##  3- https://twitter.com/Sneyder_A 
-## From @Quibdojs  		 								 https://twitter.com/QuibdoJs
-## Github: https://github.com/Maxtermax
+## Contacto:
+- esnene02@gmail.com 
+- https://twitter.com/Sneyder_A 
