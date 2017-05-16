@@ -4,20 +4,20 @@
   "description": "enigma-code es un modulo de el framework de javascript node.js que sirve para encriptar contraseñas, enigma-code consta de varias funciones como:encriptar,desencriptar y desencriptar contraseñas",
   "main": "index.js",
   "scripts": {
-    "test": "node index"
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Maxtermax/enigma-code.git"
   },
   "dependencies":{
-      "express":"3.4.7"
+     "ascii-art":"0.0.2-alpha"
     },
   "keywords": [
     "enigma-code"
   ],
   "author": "Esneyder Amin <esneyder_a@hotmail.com> (https://github.com/Maxtermax/enigma-code)",
-  "license": "EAPM",
+  "license": "GNU",
   "bugs": {
     "url": "https://github.com/Maxtermax/encrypt-scrypt/issues"
   },
